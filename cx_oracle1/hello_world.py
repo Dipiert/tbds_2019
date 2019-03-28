@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import cx_Oracle
 import configparser
 
@@ -6,7 +7,7 @@ CONFIG.read('hello_world.conf')
 USER = CONFIG['hello_world']['user']
 PASS = CONFIG['hello_world']['pass']
 
-connection = cx_Oracle.connect("SYSTEM", "oracle2019")
+connection = cx_Oracle.connect(USER, PASS)
 
 cursor = connection.cursor()
 cursor.execute("""
