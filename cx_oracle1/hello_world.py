@@ -13,8 +13,8 @@ cursor = connection.cursor()
 cursor.execute("""
     SELECT  ename, sal
     FROM    emp
-    WHERE   mgr = 7839
-""")
+    WHERE   mgr =: mgrid""", mgrid=7839
+)
 # Consulta practico 1, ejercicio 2
 for ename, sal in cursor:
    print("Values:", ename, sal)
