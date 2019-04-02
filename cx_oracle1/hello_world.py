@@ -19,3 +19,4 @@ cursor.execute("""
 col_names = [row[0] for row in cursor.description]
 for ename, sal in cursor:
    print(f"{col_names[0]}: {ename} | {col_names[1]}: {sal}")
+cursor.close()
