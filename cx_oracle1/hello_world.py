@@ -16,5 +16,6 @@ cursor.execute("""
     WHERE   mgr =: mgrid""", mgrid=7839
 )
 # Consulta practico 1, ejercicio 2
+col_names = [row[0] for row in cursor.description]
 for ename, sal in cursor:
-   print("Values:", ename, sal)
+   print(f"{col_names[0]}: {ename} | {col_names[1]}: {sal}")
