@@ -10,14 +10,10 @@ PASS = CONFIG['clase3']['pass']
 
 connection = cx_Oracle.connect(USER, PASS)
 cursor = connection.cursor()
-
 rows = [(1, "First"), (2, "Second"),(3, "Third"), (4, "Fourth"),(5, "Fifth"), (6, "Sixth"), (7, "Seventh")]
-
 cursor.execute("CREATE TABLE mytab(id NUMBER PRIMARY KEY deferrable, data VARCHAR(60))")
 cursor.executemany("INSERT INTO mytab(id, data) values (:1, :2)", rows)
-#cur2 = connection.cursor()
 cursor.execute('SELECT * FROM mytab')
 res = cursor.fetchall()
-print(res)
 cursor.execute('COMMIT')
 cursor.close()
