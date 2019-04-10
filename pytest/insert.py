@@ -15,5 +15,6 @@ cursor.execute("CREATE TABLE mytab(id NUMBER PRIMARY KEY deferrable, data VARCHA
 cursor.executemany("INSERT INTO mytab(id, data) values (:1, :2)", rows)
 cursor.execute('SELECT * FROM mytab')
 res = cursor.fetchall()
+print(res)
 cursor.execute('COMMIT')
 cursor.close()
