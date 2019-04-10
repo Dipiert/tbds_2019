@@ -1,2 +1,4 @@
 tbds/*
 *.conf
+**/__pycache__/
+*.pyc
