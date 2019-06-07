@@ -1,0 +1,10 @@
+[hello_world]
+
+user = SYSTEM
+pass = oracle2019
+
+[bottle]
+
+host = localhost
+port = 8081
+debug = True
